@@ -1,0 +1,26 @@
+[app/ui]
+version = 8.2.2
+modtime = 1635933036.590204000
+
+[app/launcher]
+version = 8.2.2
+modtime = 1635933036.591318000
+
+[indexes/helix]
+owner = admin
+version = 8.2.2
+modtime = 1635928816.309137000
+
+# Set permissions for all objects of a type
+
+[transforms]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 8.2.2
+
+[props]
+access = read : [ * ], write : [ admin ]
+export = none
+owner = admin
+version = 8.2.2
