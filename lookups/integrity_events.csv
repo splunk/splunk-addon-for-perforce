@@ -1,0 +1,11 @@
+f_integrityEvent,f_integrityEventDescription
+0,Unknown
+1,VerifyResults
+2,Unload
+3,UnloadResults
+4,ScanStart
+5,ScanEnd
+6,ScanResults
+7,ChangeVerify
+8,ChangeResults
+9,TableResults

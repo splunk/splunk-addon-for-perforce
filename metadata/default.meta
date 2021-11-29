@@ -13,14 +13,12 @@ export = system
 ### PROPS
 
 [props]
-# access = read : [ * ], write : [ admin ]
 export = system
 
 
 ### TRANSFORMS
 
 [transforms]
-# access = read : [ * ], write : [ admin ]
 export = system
 
 
