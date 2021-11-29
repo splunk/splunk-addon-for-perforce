@@ -71,7 +71,7 @@ jobs:
 
   appinspect-cli:
     name: AppInspect CLI Validation
-    needs: bundle-app
+    needs: slim-validate
     runs-on: ubuntu-latest
     steps:
       - name: Download artifact
