@@ -65,6 +65,7 @@ jobs:
         run: |
           mkdir ${{ needs.bundle-app.outputs.app_name }}
           tar -xf ${{ needs.bundle-app.outputs.app_name }}.tgz -C ${{ needs.bundle-app.outputs.app_name }}
+      
       - name: Slim Validate
         run: slim validate ${{ needs.bundle-app.outputs.app_name }}
 
