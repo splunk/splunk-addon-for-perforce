@@ -13,7 +13,7 @@ jobs:
     name: Generate App Bundle
     runs-on: ubuntu-latest
     outputs:
-      - app_name: ${{ steps.appinfo.outputs.app_name }}
+      app_name: ${{ steps.appinfo.outputs.app_name }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
