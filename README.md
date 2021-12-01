@@ -4,19 +4,22 @@ This add-on will get perforce log files enabling users to have a better overview
 **Stay tuned: more to come**
 
 ## Features
-* Get audit and performance data (Network and Database) from Perforce or Helix Core Server to build metrics
+* Get audit and performance data (Network and Database) from Perforce Helix Core Server to build metrics
 * Ingested data will have different sourcetypes depending on the event type as depicted in table below
-* CIM compliance to ease integration with other services 
-    > **TODO**
+* CIM compliance to ease integration with other services
 
-| **Eventtype** | **Sourcetype**              | **Description**                                                           |
+| **Eventtype**  | **Sourcetype**              | **Description**                                                           |
 |----------------|-----------------------------|---------------------------------------------------------------------------|
+| `4`,`5`        | `hx:errors`                 | Error events (errors-failed, errors-fatal)                                |
 | `6`            | `hx:audit`                  | Audit events (p4 sync, p4 archive, etc)                                   |
 | `7`            | `hx:track:usage`            | Performance usage tracking                                                |
 | `8`            | `hx:track:rpc`              | Network performance tracking (incl. send/receive errors and duplex stats) |
 | `9`            | `hx:track:db`               | Database performance tracking (incl. lock times, peek)                    |
+| `11`           | `hx:triggers`               | Trigger events                                                            |
+| `12`           | `hx:events`                 | Server events (startup, shutdown, checkpoint, journal rotation, etc.)     |
 | `14`           | `hx:track:networkestimates` | Network estimates                                                         |
 | `16`           | `hx:auth`                   | Login events                                                              |
+| `17`           | `hx:route`                  | Log the full network route of authenticated client connections            |
 
 > **TODO** Update table above
 
@@ -32,11 +35,16 @@ This add-on will get perforce log files enabling users to have a better overview
     * `track.csv`
     * `triggers.csv`
     * `user.csv`
-* Splunk Universal or Heavy Forwarder installed and configured to monitor above log files from the Helix Core Server
+* Splunk Universal or Heavy Forwarder installed and [properly configured](https://docs.splunk.com/Documentation/Forwarder/8.2.2/Forwarder/Installanixuniversalforwarder#After_you_install:_Start_and_configure_the_universal_forwarder)
 
 ### Installation
-* Install the app in the UF/HF
-* In your forwarder enable data input from `inputs.conf`
+Splunk System Administrators are requested to:
+* Configure a new index (e.g. `helix`) which will be populated with events coming from the Helix Core Server
+* Install this app in the UF/HF
+* Configure the forwarder `inputs.conf`
+    * make sure monitored log files exist in your Helix Core Server
+    * modify index name if different from `helix`
+    * enable data input
 
 ### Usage
 As soon as your data is indexed, build and enjoy your own analytics.
@@ -57,7 +65,7 @@ $ p4 login
 ```
 
 Check data is flowing in Splunk via SPL
-`index=helix`
+`index=<YOUR_INDEX>` (e.g. `index=helix`)
 
 ## References
 * [Structured server logs](https://www.perforce.com/perforce/doc.current/manuals/p4sag/Content/P4SAG/structure-logging-using.html)
