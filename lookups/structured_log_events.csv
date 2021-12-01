@@ -1,0 +1,25 @@
+eventtype,eventname
+0,command-start
+1,command-compute
+2,command-end
+3,errors-all
+4,errors-failed
+5,errors-fatal
+6,audit
+7,track-usage
+8,track-rpc
+9,Network performance
+10,user
+11,trigger
+12,event
+13,purge
+14,network-estimates
+15,integrity
+16,auth
+17,route
+18,audit-size
+19,ldapsync
+20,action
+21,RemoteDatabasePerformance
+22,ServerLockPerformance
+23,DatabaseBlockingLocksTaken
