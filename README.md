@@ -1,12 +1,10 @@
 # Splunk Add-on for Perforce
 This add-on will get perforce log files enabling users to have a better overview of the system by analysing provided metrics.
 
-**Stay tuned: more to come**
-
 ## Features
-* Get audit and performance data (Network and Database) from Perforce Helix Core Server to build metrics
+* Get audit and performance data from Perforce Helix Core Server to build metrics
 * Ingested data will have different sourcetypes depending on the event type as depicted in table below
-* CIM compliance to ease integration with other services
+* CIM compliance to ease integration with other services (best effort)
 
 | **Eventtype**  | **Sourcetype**              | **Description**                                                           |
 |----------------|-----------------------------|---------------------------------------------------------------------------|
@@ -15,13 +13,14 @@ This add-on will get perforce log files enabling users to have a better overview
 | `7`            | `hx:track:usage`            | Performance usage tracking                                                |
 | `8`            | `hx:track:rpc`              | Network performance tracking (incl. send/receive errors and duplex stats) |
 | `9`            | `hx:track:db`               | Database performance tracking (incl. lock times, peek)                    |
+| `10`           | `hx:user`                   | User events; one record every time a user runs p4 logappend               |
 | `11`           | `hx:triggers`               | Trigger events                                                            |
 | `12`           | `hx:events`                 | Server events (startup, shutdown, checkpoint, journal rotation, etc.)     |
 | `14`           | `hx:track:networkestimates` | Network estimates                                                         |
+| `15`           | `hx:integrity`              | Major events that occur during replica integrity checking                 |
 | `16`           | `hx:auth`                   | Login events                                                              |
 | `17`           | `hx:route`                  | Log the full network route of authenticated client connections            |
 
-> **TODO** Update table above
 
 ## Getting Started
 ### Requirements
@@ -40,7 +39,7 @@ This add-on will get perforce log files enabling users to have a better overview
 ### Installation
 Splunk System Administrators are requested to:
 * Configure a new index (e.g. `helix`) which will be populated with events coming from the Helix Core Server
-* Install this app in the UF/HF
+* Install this app in the Universal / Heavy Forwarder
 * Configure the forwarder `inputs.conf`
     * make sure monitored log files exist in your Helix Core Server
     * modify index name if different from `helix`
