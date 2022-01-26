@@ -2,9 +2,9 @@
 This add-on will get perforce log files enabling users to have a better overview of the system by analysing provided metrics.
 
 ## Features
-* Get audit and performance data (Network and Database) from Perforce Helix Core Server to build metrics
+* Get audit and performance data from Perforce Helix Core Server to build metrics
 * Ingested data will have different sourcetypes depending on the event type as depicted in table below
-* CIM compliance to ease integration with other services
+* CIM compliance to ease integration with other services (best effort)
 
 | **Eventtype**  | **Sourcetype**              | **Description**                                                           |
 |----------------|-----------------------------|---------------------------------------------------------------------------|
@@ -39,7 +39,7 @@ This add-on will get perforce log files enabling users to have a better overview
 ### Installation
 Splunk System Administrators are requested to:
 * Configure a new index (e.g. `helix`) which will be populated with events coming from the Helix Core Server
-* Install this app in the UF/HF
+* Install this app in the Universal / Heavy Forwarder
 * Configure the forwarder `inputs.conf`
     * make sure monitored log files exist in your Helix Core Server
     * modify index name if different from `helix`
