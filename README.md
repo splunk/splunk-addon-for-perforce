@@ -1,4 +1,9 @@
 # Splunk Add-on for Perforce
+
+[![Actions Status: test](https://github.com/splunk/splunk-addon-for-perforce/actions/workflows/ci.yml/badge.svg)](https://github.com/splunk/splunk-addon-for-perforce/actions?query=workflow%3A"CI")
+[![Latest release (latest by date)](https://img.shields.io/github/v/release/splunk/splunk-addon-for-perforce?label=Latest%20Release)](https://github.com/splunk/splunk-addon-for-perforce/releases)
+[![License](https://img.shields.io/github/license/splunk/splunk-addon-for-perforce)](LICENSE)
+
 This add-on will get perforce log files enabling users to have a better overview of the system by analysing provided metrics.
 
 ## Features
@@ -72,6 +77,11 @@ Check data is flowing in Splunk via SPL
 * Describe the schema of structured log record types via command [p4 logschema](https://www.perforce.com/manuals/cmdref/Content/CmdRef/p4_logschema.html)
 * [P4AUDIT variable](https://www.perforce.com/manuals/cmdref/Content/CmdRef/P4AUDIT.html)
 * [Enable auditing](https://www.perforce.com/manuals/p4sag/Content/P4SAG/auditing-user-file-access.html)
+
+## Contributing
+* :rocket:   Want to **contribute**? [Open a Pull Request](https://github.com/splunk/splunk-addon-for-perforce/pulls)
+* :bug:   Found a **bug**? [Open an issue](https://github.com/splunk/splunk-addon-for-perforce/issues)
+* :bulb:   Got an idea for a **new feature**? [Open a feature request](https://github.com/splunk/splunk-addon-for-perforce/issues)
 
 ## License
 Copyright 2022 Splunk Inc.
